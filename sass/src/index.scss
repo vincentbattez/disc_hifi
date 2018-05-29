@@ -1,0 +1,130 @@
+
+//______________________________-HEADER-______________________________//
+header{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    // bg dans le HTML
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-transform: uppercase;
+    @extend .flex-center;
+    @include box-shadow( $shadow-3 );
+    .header-debug{
+        width: 100%;
+        position: relative;
+    }
+    h1{
+        color: lighten($color-principal, 20%);
+        font-family: $font-regular;
+        z-index: 1;
+        position: relative;
+        @include media(phone){
+            font-size: $font-size-large;
+        }
+        @include media(tablet){
+            font-size: $font-size-x-large;
+        }
+        @include media(pc){
+            font-size: $font-size-xx-large;
+        }
+    }
+}
+//______________________________-CATEGORY-______________________________//
+.category{
+    .row > article {
+        padding: 0;
+    }
+    .category-bg{
+        width: 100%;
+        height: 100%;
+        @include transition(all 300ms ease-in-out);
+    }
+    @include media(phone){
+        .category-bg{
+            height: auto;
+            position: absolute;
+            top: 0;
+        }
+        #caisson_basse .category-bg{
+            top: 0;
+            height: 100%;
+        }
+    }
+    h3{
+        width: 100%;
+        position: absolute;
+        bottom: 5px;
+        color: white;
+        display: block;
+        text-align: center;
+        z-index: 2;
+    }
+    a:hover, a:focus{
+        & .overlay{background-color: rgba($color-principal, .7);}
+        & .category-bg{@include scale(1.2);}
+    }
+    .icon{
+        color:white;
+        font-size: 70px;
+    }
+    .glyphicon{
+        margin: 0 auto;
+        color: white;
+        font-size: 80px;
+    }
+    .category-icon{
+        display: flex;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        left: 0px;
+        bottom: 0px;
+        z-index: 2;
+    }
+}
+//______________________________-MAGASIN-______________________________//
+#magasin {
+	p {
+		text-align: justify;
+		padding: 50px 0;
+	}
+	.title {
+		z-index: 2;
+		position: absolute;
+		bottom: 110px;
+		color: white;
+		width: 50%;
+		h2 {
+			font-size: 2.2rem;
+			text-transform: uppercase;
+    	    &:first-line {
+    			font-size: 5.2rem;
+    		}
+			span {
+				text-transform: capitalize;
+			}
+		}
+	}
+	.magasin-img {
+		position: relative;
+		height: 100vh;
+		width: 100%;
+		background-image: url(../img/magasin/magasin.jpg);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+	}
+	.overlay {
+		background: transparentize($color-principal, .35);
+	}
+	button {
+		float: right;
+		margin-top: -30px;
+		margin-bottom: 80px;
+	}
+}

@@ -1,0 +1,51 @@
+// Color
+$color-principal: #cbaf82;
+$color-secondary: #212121;
+$color-promotion: #ff5a00;
+
+$color-border-light: #e8e6e6;
+
+$color-lien: #bababa;
+$color-lien-hover: lighten($color-principal, 10);
+
+//alert
+$color-alert-bg: #f2dede;
+$color-alert-font: #a94442;
+$color-alert-border: #ebccd1;
+//sucess
+$color-sucess-bg: #dff0d8;
+$color-sucess-font: #3c763d;
+$color-sucess-border: #d6e9c6;
+//info
+$color-info-bg: #d9edf7;
+$color-info-font: #31708f;
+$color-info-border: #bce8f1;
+//warning
+$color-warning-bg: #fcf8e3;
+$color-warning-font: #8a6d3b;
+$color-warning-border: #faebcc;
+
+// Shadow
+$shadow-1 :0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+$shadow-2 :0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+$shadow-3 :0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+$shadow-4 :0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+$shadow-5 :0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+$shadow-input :inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px transparentize($color-principal, .6);
+
+
+//Font
+$font-size-small: 1.2rem;
+$font-size-regular: 1.6rem;
+$font-size-large: 2.4rem;
+$font-size-x-large: 3.2rem;
+$font-size-xx-large: 4.8rem;
+$font-size-xxx-large: 6.4rem;
+$font-size-xxxx-large: 9.6rem;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+$font-regular: 'century_gothic-regular', arial, sans-serif;
+$font-bold: 'century_gothic-bold', arial, sans-serif;

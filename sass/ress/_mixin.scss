@@ -1,0 +1,133 @@
+// Forme
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    -ms-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -o-border-radius: $radius;
+}
+@mixin box-shadow($params) {
+  -webkit-box-shadow : $params;
+     -moz-box-shadow : $params;
+          box-shadow : $params;
+}
+// @include box-shadow( #{ 0 0 5px #333 , inset 0 0 2px #666 } );
+@mixin gradient-diago($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+    // background: $start-color;
+    background-image: -webkit-linear-gradient(to top left, $start-color $start-percent, $end-color $end-percent); // Safari 5.1-6, Chrome 10+
+    background-image: -o-linear-gradient(to top left, $start-color $start-percent, $end-color $end-percent); // Opera 12
+    background-image: linear-gradient(to top left, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
+}
+@mixin gradient-vertical($direction: right, $start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+    background: $start-color;
+    background-image: -webkit-linear-gradient($direction, $end-color $start-percent, $start-color $end-percent); // Safari 5.1-6, Chrome 10+
+    background-image: -o-linear-gradient($direction, $start-color $start-percent, $end-color $end-percent); // Opera 12
+    background-image: linear-gradient(to $direction, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
+}
+@mixin filter($filter-type,$filter-amount) {
+    -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+    -moz-filter: $filter-type+unquote('(#{$filter-amount})');
+    -ms-filter: $filter-type+unquote('(#{$filter-amount})');
+    -o-filter: $filter-type+unquote('(#{$filter-amount})');
+    filter: $filter-type+unquote('(#{$filter-amount})');
+}
+@mixin transform($transforms) {
+    transform: $transforms;
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+}
+@mixin rotate ($deg) {
+    @include transform(rotate($deg));
+}
+@mixin scale($scale) {
+    @include transform(scale($scale));
+}
+@mixin origin($origin) {
+    @include transform(origin($origin));
+}
+@mixin translate ($xy) {
+    @include transform(translate($xy));
+}
+@mixin translateY ($xy) {
+    @include transform(translateY($xy));
+}
+@mixin translateX ($xy) {
+    @include transform(translateX($xy));
+}
+
+//Animations
+@mixin transition($args) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+@mixin transition2($args, $args2) {
+    -webkit-transition: $args , $args2;
+    -moz-transition: $args , $args2;
+    -ms-transition: $args , $args2;
+    -o-transition: $args , $args2;
+    transition: $args , $args2;
+}
+@mixin animation($str) {
+    -webkit-animation: $str;
+    -moz-animation: $str;
+    -ms-animation: $str;
+    -o-animation: $str;
+    animation:$str;
+}
+@mixin keyframe ($animation_name) {
+    @-webkit-keyframes #{$animation_name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation_name} {
+        @content;
+    }
+    @-o-keyframes #{$animation_name} {
+        @content;
+    }
+    @keyframes #{$animation_name} {
+        @content;
+    }
+}
+
+//RESPONSIVE
+@mixin media($point, $min: min) {
+    @if $point == LG { // lg
+        @media only screen and ($min + -width: 1200px) { @content; }
+    }
+    @else if $point == PC { // md
+        @media only screen and ($min + -width: 992px) { @content; }
+    }
+    @else if $point == pc { // md
+        @media only screen and ($min + -width: 992px) { @content; }
+    }
+    @else if $point == tablet { //sm
+        @media only screen and ($min + -width: 768px) { @content; }
+    }
+    @else if $point == phone { //xs
+        @media only screen and (max-width: 768px) { @content; }
+    }@else{ //perso
+        @media ($point) { @content; }
+    }
+}
+
+//Positions
+@mixin clearfix {
+    &:before,
+    &:after {
+        content:"";
+        display:table;
+    }
+    &:after {
+        clear:both;
+    }
+    &{
+        zoom:1;
+    }
+}

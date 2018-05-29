@@ -1,0 +1,22 @@
+// Extend
+.center{
+  width: 100%;
+  display: block;
+  position: absolute;
+  text-align: center;
+  margin: 0 auto;
+  top: 50%;
+  @include translateY(-50%);
+}
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.footer-flex{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
